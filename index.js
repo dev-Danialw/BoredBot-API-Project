@@ -1,10 +1,9 @@
-// let activity = document.getElementById("activity");
-// const boredBtn = document.getElementById("boredBtn");
+const btn = document.getElementById("btn");
+const idea = document.getElementById("idea");
+const body = document.querySelector("body");
 
-// boredBtn.addEventListener("click", () => {
-//   return console.log("hi");
-// });
-
-fetch("https://apis.scrimba.com/bored/api/activity")
-  .then((response) => response.json())
-  .then((data) => console.log("the data is ", data));
+btn.addEventListener("click", () => {
+  fetch("https://apis.scrimba.com/bored/api/activity")
+    .then((response) => response.json())
+    .then((data) => (idea.textContent = data.activity));
+});
